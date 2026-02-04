@@ -1,0 +1,302 @@
+:root {
+    --sidebar-color: #4a3f35;
+    --accent-gold: #d4af37;
+    --main-bg: #ffffff;
+    --text-dark: #1a1a1a;
+    --hover-bg: rgba(212, 175, 55, 0.15);
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+aside {
+    width: 280px;
+    background-color: var(--sidebar-color);
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.wiki-header {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--accent-gold);
+}
+
+.nav-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #eee;
+    display: block;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Sidebar Animation */
+.submenu {
+    display: grid;
+    grid-template-rows: 1fr;
+    /* Open state */
+    transition: grid-template-rows 0.35s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.35s ease;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+}
+
+.submenu.collapsed {
+    grid-template-rows: 0fr;
+    /* Collapsed state */
+    opacity: 0;
+    margin: 0;
+}
+
+/* Ensure inner content is wrapped to animate properly */
+.submenu-inner {
+    overflow: hidden;
+}
+
+.submenu a {
+    padding: 8px 20px 8px 40px;
+    display: block;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+.submenu a:hover {
+    color: var(--accent-gold);
+    background: var(--hover-bg);
+}
+
+.nav-item.has-submenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow {
+    display: inline-block;
+    font-size: 0.8em;
+    transition: transform 0.35s ease;
+}
+
+.arrow.collapsed {
+    transform: rotate(-90deg);
+}
+
+main {
+    flex-grow: 1;
+    background-color: var(--main-bg);
+    overflow-y: auto;
+    padding: 40px 60px;
+}
+
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+/* Timeline Slider */
+.timeline-container {
+    margin: 20px 0 40px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.timeline-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: var(--sidebar-color);
+}
+
+.timeline-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.timeline-slider:hover {
+    opacity: 1;
+}
+
+.timeline-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-gold);
+    cursor: pointer;
+}
+
+.timeline-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-gold);
+    cursor: pointer;
+}
+
+/* Year Content */
+[data-year] {
+    display: none;
+    /* Hidden by default, JS toggles this */
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Aldren Specifics */
+.info-box {
+    background: #f4f4f4;
+    border-left: 5px solid var(--accent-gold);
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.info-title {
+    font-weight: bold;
+    color: var(--sidebar-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Wiki-style internal links */
+.wiki-link {
+    color: #432e14;
+    background-color: rgba(152, 135, 116, 0.15);
+    border-radius: 5px;
+    padding: 0 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.wiki-link:hover {
+    color: #b49f80;
+    /* Gold/Tan color */
+    background-color: rgba(152, 135, 116, 0.25);
+}
+
+/* Flora and Fauna Styles */
+.flora-fauna-section {
+    margin-top: 40px;
+}
+
+.flora-fauna-item {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.flora-fauna-item:last-child {
+    border-bottom: none;
+}
+
+.flora-fauna-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--sidebar-color);
+    margin-bottom: 5px;
+}
+
+.region-info {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.bio-property {
+    background: rgba(212, 175, 55, 0.05);
+    border-left: 4px solid var(--accent-gold);
+    padding: 12px 15px;
+    margin: 15px 0;
+}
+
+.bio-property .info-title {
+    color: #8a6d10;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.hero-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 30px !important;
+}
+
+.item-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin: 10px 0 20px 0 !important;
+}
+
+.content img.small-img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlight Target Animation */
+.highlight-target {
+    background-color: rgba(212, 175, 55, 0.2); /* Semi-transparent gold */
+    border: 2px solid var(--accent-gold);
+    border-radius: 12px;
+    padding: 10px;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}

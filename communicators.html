@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Коммуникаторы — Wiki</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <aside>
+        <div class="wiki-header">Энциклопедия Воледиса</div>
+
+        <!-- Страны мира -->
+        <div class="nav-item has-submenu" id="countries-toggle">
+            Страны мира <span class="arrow collapsed">▼</span>
+        </div>
+        <div class="submenu collapsed">
+            <div class="submenu-inner">
+                <a href="alboreia.html">Альборея</a>
+                <a href="aldren.html">Альдрен</a>
+                <a href="ravena.html">Равена</a>
+            </div>
+        </div>
+
+        <!-- Религии мира -->
+        <div class="nav-item has-submenu" id="religions-toggle">
+            Религии мира <span class="arrow collapsed">▼</span>
+        </div>
+        <div class="submenu collapsed">
+            <div class="submenu-inner">
+                <a href="lumenianstvo.html">Люменианство</a>
+                <a href="rotgeshtalt.html">Ротгештальт</a>
+                <a href="hikayat_al_ard.html">Хикайат аль-Ард</a>
+                <a href="yasnovladie.html">Ясновладие</a>
+            </div>
+        </div>
+
+        <!-- Магия -->
+        <div class="nav-item has-submenu" id="magic-toggle">
+            Магия <span class="arrow collapsed">▼</span>
+        </div>
+        <div class="submenu collapsed">
+            <div class="submenu-inner">
+                <a href="arkana.html">Аркана</a>
+                <a href="bioalchemy.html">Биоалхимия</a>
+                <a href="vella.html">Велла</a>
+                <a href="supernatural_beings.html">Сверхъестественные существа</a>
+                <a href="ether.html">Эфир</a>
+            </div>
+        </div>
+
+        <!-- Технологии -->
+        <div class="nav-item has-submenu" id="tech-toggle">
+            Технологии <span class="arrow">▼</span>
+        </div>
+        <div class="submenu">
+            <div class="submenu-inner">
+                <a href="automatons.html">Автоматоны</a>
+                <a href="communicators.html" style="color: var(--accent-gold)">Коммуникаторы</a>
+                <a href="manapasta.html">Манапаста</a>
+                <a href="weapons.html">Оружие</a>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <div class="content">
+            <h1>Коммуникаторы</h1>
+            <p><strong>Коммуникаторы</strong> это простые устройства, повзоляющие в первую очередь солдатам, но также и
+                гражданским, общаться при помощи азбуки морзе.</p>
+            <p>Принцип их работы прост. Два устройства изначально должны быть связаны, чтобы между ними можно было
+                переслать <a href="vella.html" class="wiki-link">веллы</a> а также был создан шифр. Сначала пользователь
+                А вводит своё сообщение, коммуникатор шифрует его и пересылает <a href="vella.html"
+                    class="wiki-link">веллы</a>
+                на другое устройство. Устройство пользователя Б расшифровывает текст и воспроизводит его. Шифр необходим
+                на случай перехвата велл посторонними.</p>
+            <p>При том существует как традиционная версия, которая имеет только кнопку нажатия для ввода азбуки морзе
+                и кнопку отправки, так и упрощенная, где пользователь может написать обычный текст на клавиатуре, а он
+                уже будет переведен в азбуку морзе и отправлен.</p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
